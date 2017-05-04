@@ -3,23 +3,25 @@
 # Install and load `ggplot2` and `dplyr`
 library("ggplot2")
 library("dplyr")
+library("maps")
 
 # Read in the election data file (.csv)
 # BE SURE TO SET YOUR WORKING DIRECTORY!
 election <- read.csv('data/2016_US_County_Level_Presidential_Results.csv', stringsAsFactors = FALSE)
 
 # Inspect the `election` data frame to understand the data you're working with
-
+colnames(election)
+View(election)
 
 # Consider: what column contains state names? What column contains county names?
 # What format are those county names in?
 
 
 # Use `map_data()` to load the `county` map of the US, storing it in a variable
-
+counties <- map_data("county")
 
 # Inspect this data frame to understand what data yu're working with
-
+View(head(counties, 10))
 
 # Consider: what column contains state names? What column contains county names?
 # What format are those county names in?
